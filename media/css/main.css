@@ -1,0 +1,502 @@
+/* _________________________________________
+CONTENT:	ProjectName, Stylesheet Purpose
+AUTHOR:		Your Name
+____________________________________________
+
+TABLE OF CONTENTS:
+
+1. html root
+2. typograpy
+3. content
+
+========================================================== */
+
+/* 2. HTML ROOT  ========================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body, h1 {
+	font-family: helvetica, arial, sans-serif;
+	margin: 0 auto; 
+}
+
+/* 3. TYPOGRAPHY  ======================================== */
+
+h1 {
+
+}
+
+
+
+
+/*  CONTENT  =============================================== */
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  
+  /* non-critical appearance styles */
+  list-style: none;
+  background: #111;
+}
+
+/* Navigation Menu - List items */
+.nav-item {
+  /* non-critical appearance styles */
+  width: 200px;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #000;
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: 1em;
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+  color: white;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: color 0.2s, background 0.5s;
+}
+
+.nav-item a:hover {
+  color: #c74438;
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+}
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white; /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+  
+  /* non-critical apperance styles */
+  padding: 4em;
+  background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(221,241,249) 35%,rgb(160,216,239) 100%);
+  background-size: 200%;
+}
+
+/* Nav Trigger */
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: 15px; top: 15px;
+  z-index: 2;
+  
+  /* non-critical apperance styles */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-size: contain;
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+  transition: left 0.2s;
+}
+
+.nav-trigger:checked + label {
+  left: 215px;
+}
+
+.nav-trigger:checked ~ .site-wrap {
+  left: 200px;
+  box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+}
+
+body {
+	/* Without this, the body has excess horizontal scroll when the menu is open */
+  overflow-x: hidden;
+}
+
+/*  GRID =================================================== */
+
+.col_a {
+	background: yellow;
+}
+
+.col_b {
+	background: orange;
+}
+
+.col_c {
+	background: gray;
+}
+
+.col_d {
+	background: aqua;
+}
+
+section {
+	position: relative;
+	-webkit-transition: all 2s ease-in-out;
+}
+
+section header {
+	position: absolute;
+	top: calc(50% - 1.25em);
+	left: calc(50% - .5em);
+}
+
+/* INDEX */
+
+.index section {
+	float: left;
+	height: 48.4%;
+	width: 48.5%;
+}
+
+.index .col_a {
+	margin: 1% .5% .5% 1%;
+}
+
+.index .col_b {
+	margin: 1% 1% .5% .5%;
+}
+
+.index .col_c {
+	margin: .5% .5% 1% 1%;
+}
+
+.index .col_d {
+	margin: .5% 1% 1% .5%;
+}
+
+/* LAYOUT 1 */
+
+.layout_1 section {
+	height: 14%;
+	margin: 1%;
+}
+
+.layout_1 .col_b,
+.layout_1 .col_c {
+	height: 41%;
+	margin: 1%;
+}
+
+/* LAYOUT 2 */
+
+.layout_2 section {
+	height: 48%;
+	margin: 1%;
+}
+
+.layout_2 .col_b,
+.layout_2 .col_c {
+	width: 48.5%;
+	margin: 1%;
+	float: left;
+}
+
+.layout_2 .col_b {
+	margin: 0% .5% 1% 1%;  
+}
+
+.layout_2 .col_c {
+	margin: 0% 1% 1% .5%;
+}
+
+/* LAYOUT 3 */
+
+.layout_3 section {
+	float: left;
+	height: 48.5%;
+	width: 48.5%;
+}
+
+.layout_3 .col_a {
+	margin: 1% .5% .5% 1%;
+}
+
+.layout_3 .col_b {
+	margin: 1% 1% .5% .5%;
+}
+
+.layout_3 .col_c {
+	margin: .5% .5% 1% 1%;
+}
+
+.layout_3 .col_d {
+	margin: .5% 1% 1% .5%;
+}
+
+/* LAYOUT 4 */
+
+.layout_4 section {
+	float: left;
+	height: 98%;
+	width: 28.5%
+}
+
+.layout_4 .col_b,
+.layout_4 .col_c,
+.layout_4 .col_d {
+	float: left;
+	height: 32%;
+	width: 68.5%;
+}
+
+.layout_4 .col_a {
+	margin: 1% .5% 1% 1%;
+}
+
+.layout_4 .col_b {
+	margin: 1% 1% .5% .5%;
+}
+
+.layout_4 .col_c {
+	margin: .5% 1% .5% .5%;
+}
+
+.layout_4 .col_d {
+	margin: .5% 1% 1% .5%;
+}
+
+
+
+/* MEDIA QUERY */
+
+@media screen and (min-width: 760px) {
+
+	/* INDEX MEDIA QUERY */
+
+
+
+	/* LAYOUT 1 MEDIA QUERY */
+	
+	.layout_1 .col_b,
+	.layout_1 .col_c {
+		float: left;
+		height: 82%;
+		width: 48.5%;
+	}
+
+	.layout_1 .col_b {
+		margin: 0% .5% 1% 1%;
+ 	}
+
+ 	.layout_1 .col_c {
+		margin: 0% 1% 1% .5%;
+ 	}
+
+ 	/* LAYOUT 2 MEDIA QUERY */
+
+ 	.layout_2 .col_a {
+ 		float: left;
+		height: 98%;
+		width: 48.5%;
+		margin: 1% .5% 1% 1%;
+	}
+
+	.layout_2 .col_b,
+	.layout_2 .col_c {
+		float: left;
+		height: 48.5%;
+		width: 48.5%;
+	}
+
+	.layout_2 .col_b {
+		margin:1% 1% .5% .5%;
+ 	}
+
+ 	.layout_2 .col_c {
+		margin: .5% 1% 1% .5%;
+ 	}
+
+ 	/* LAYOUT 3 MEDIA QUERY */
+
+	.layout_3 .col_a {
+		float: left;
+		height: 48.5%;
+		width: 98%;
+	}
+	
+	.layout_3 .col_b,
+	.layout_3 .col_c,
+	.layout_3 .col_d {
+		float: left;
+		height: 48.5%;
+		width: 32%;
+	}
+
+	.layout_3 .col_b {
+		margin: .5% .5% 1% 1%;
+	}
+
+	.layout_3 .col_c {
+		margin: .5% .5% 1% .5%;
+	}
+
+	.layout_3 .col_d {
+		margin: .5% 1% 1% .5%;
+	}
+
+ 	/* LAYOUT 4 MEDIA QUERY */
+
+	.layout_4 .col_a {
+		float: left;
+		height: 48.5%;
+		width: 23.5%;
+	}
+
+	.layout_4 .col_b {
+		float: left;
+		height: 48.5%;
+		width: 73.5%;
+	}
+
+	.layout_4 .col_c,
+	.layout_4 .col_d {
+		float: left;
+		height: 48.5%;
+		width: 48.5%;
+	}
+
+	.layout_4 .col_a {
+		margin: 1% .5% .5% 1%;
+	}
+
+	.layout_4 .col_b {
+		margin: 1% .5% .5% .5%;
+	}
+
+	.layout_4 .col_c {
+		margin: .5% .5% 1% 1%;
+	}
+
+	.layout_4 .col_d {
+		margin: .5% 1% 1% .5%;
+	}
+
+}
+
+@media screen and (min-width: 1280px) {
+
+	/* INDEX MEDIA QUERY */
+
+	/* LAYOUT 1 MEDIA QUERY */
+
+	.layout_1 .col_b {
+		width: 28.5%;
+	}
+
+	.layout_1 .col_c {
+		width: 68.5%;
+	}
+
+	/* LAYOUT 2 MEDIA QUERY */
+
+	.layout_2 .col_a {
+		float: left;
+		height: 48.5%;
+		width: 29%;
+		margin: 1% .5% 1% 1%; 
+	}
+	.layout_2 .col_b {
+		float: left;
+		width: 68%;
+		height: 48.5%;
+		margin: 1% 1% 1% .5%;
+	}
+
+	.layout_2 .col_c {
+		width: 98%;
+		height: 48.5%;
+		margin: 0% 1% 1% 1%;
+	}
+
+	/* LAYOUT 3 MEDIA QUERY */
+
+	.layout_3 .col_a,
+	.layout_3 .col_b,
+	.layout_3 .col_c,
+	.layout_3 .col_d {
+		float: left;
+		width: 23.75%;
+		height: 98%;
+	}
+
+	.layout_3 .col_a {
+		margin: 1% .5% 1% 1%;
+	}
+
+	.layout_3 .col_b,
+	.layout_3 .col_c {
+		margin: 1% .5% 1% .5%;
+	}
+
+	.layout_3 .col_d {
+		margin: 1% 1% 1% .5%;
+	}
+	
+	/* LAYOUT 4 MEDIA QUERY */
+
+	.layout_4 .col_a {
+		float: left;
+		height: 48.5%;
+		width: 18.5%;
+	}
+
+	.layout_4 .col_b {
+		float: left;
+		height: 48.5%;
+		width: 78.5%;
+	}
+
+	.layout_4 .col_c {
+		float: left;
+		height: 48.5%;
+		width: 78.5%;
+	}
+
+	.layout_4 .col_d {
+		float: left;
+		height: 48.5%;
+		width: 18.5%;
+	}
+
+	.layout_4 .col_a {
+		margin: 1% .5% .5% 1%;
+	}
+
+	.layout_4 .col_b {
+		margin: 1% .5% .5% .5%;
+	}
+
+	.layout_4 .col_c {
+		margin: .5% .5% 1% 1%;
+	}
+
+	.layout_4 .col_d {
+		margin: .5% 1% 1% .5%;
+	}
+
+}
+
+
